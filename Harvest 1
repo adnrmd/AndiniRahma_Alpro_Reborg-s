@@ -1,0 +1,33 @@
+#Membuat fungsi belok ke kanan
+def turn_right():
+    for r in range(0,3):
+        turn_left()
+        
+#Membuat fungsi bergerak sejauh x langkah ke depan 
+def move_x(x):
+    for x in range(0,x):
+        move()
+        
+#berjalan memasuki kebun
+turn_left()
+move_x(2)
+turn_right()
+move_x(2)
+
+#membuat fungsi memanen 1 baris
+def panen_1_baris():
+    while object_here():
+        if "wortel":
+            take()
+            move()
+    else:
+        turn_left()
+        turn_left()
+        move_x(6)
+        turn_right()
+        move()
+        turn_right()
+        
+#memanggil fungsi         
+for r in range(0,6):
+    panen_1_baris()
