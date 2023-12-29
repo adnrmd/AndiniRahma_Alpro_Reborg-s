@@ -1,0 +1,48 @@
+#fungsi belok kanan
+def turn_right():
+    for r in range(0,3):
+        turn_left()
+
+#fungsi bergerak sejauh x langkah        
+def langkah_x(x):
+    for x in range(0,x):
+        move()
+
+#fungsi menghadap kiri        
+def kiri():
+    for r in range(0,2):
+        turn_left()
+        move()
+
+#fungsi menghadap kanan        
+def kanan():
+    for r in range(0,2):
+        turn_right()
+        move()  
+        
+#berjalan ke arah kebun
+turn_left()
+langkah_x(2)
+turn_right()
+langkah_x(2)
+
+#fungsi memanen dan meletakkan benih
+def panen():
+    for r in range(0,6):
+        while object_here():
+            take()
+        else:
+            put()
+            move() 
+
+#fungsi memanen semua yang ada di petak            
+def panen_semua():
+    panen()
+    kiri()
+    panen()
+    kanan() 
+
+#memanggil fungsi   
+for r in range(0,3):
+    panen_semua()
+    
