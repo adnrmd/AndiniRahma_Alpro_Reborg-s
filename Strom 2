@@ -1,0 +1,86 @@
+#fungsi belok kanan
+def turn_right():
+    for r in range(0,3):
+        turn_left()
+
+#fungsi bergerak sejauh x langkah di depan
+def langkah_x(x):
+    for x in range(0,x):
+        move()
+
+#fungsi berbalik arah         
+def berbalik():
+    turn_left()
+    turn_left()  
+
+#fungsi mengambil daun dan berbelok ke kiri    
+def kiri():
+    while object_here():
+        take()
+    turn_left()
+    move()
+    turn_left()
+
+#fungsi melewati sudut pembuangan   
+def sudut():
+    while object_here():
+        take()
+    turn_right()
+    move()
+    turn_left()
+    move()
+    berbalik()
+
+#fungsi fungsi mengambil daun dan berbelok ke kanan      
+def kanan():
+    while object_here():
+        take()
+    turn_right()
+    move()
+    turn_right()
+ 
+#fungsi kembali ke rumah
+def rumah():
+    while object_here():
+        take()
+    turn_left()
+    move()
+    turn_right()
+    langkah_x(2)
+    turn_right()
+    move()
+    
+#fungsi mengambil daun dan bergerak maju    
+def mengambil_daun():
+    while object_here():
+        take()
+def step():
+    while front_is_clear():
+        mengambil_daun()
+        move() 
+        
+#menjalankan fungsi
+step()
+mengambil_daun()
+kiri()
+step()
+sudut()
+
+step()
+kiri()
+step()
+kanan()
+step()
+kiri()
+step()
+
+turn_left()
+
+#berjalan maju dan melempar daun
+while front_is_clear():
+    move()
+while carries_object():
+    toss()
+
+#robot akan kembali ke rumah awal    
+rumah()
