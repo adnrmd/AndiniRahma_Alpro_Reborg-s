@@ -1,0 +1,31 @@
+#fungsi belok kanan
+def turn_right():
+    for r in range(0,3):
+        turn_left()
+
+#fungsi bergerak sejauh x langkah        
+def langkah_x(x):
+    for x in range(0,x):
+        move()
+
+#fungsi mengambil daun di petak    
+while front_is_clear():
+    while object_here():
+        take()
+    move()
+else:
+    while object_here():
+        take()
+    turn_left()
+    move()
+    turn_left()
+    langkah_x(4)
+
+#fungsi melempar daun yang dibawa    
+while carries_object():
+    toss()
+turn_left()
+move()
+turn_right()
+move()
+    
